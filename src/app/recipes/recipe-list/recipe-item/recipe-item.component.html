@@ -1,7 +1,10 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelected()">
+<a 
+  href="#" 
+  class="list-group-item clearfix" 
+  (click)="onSelected()">
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-    <!-- <p class="list-group-item-text">{{ recipe.desc }}</p> -->
+    <p class="list-group-item-text">{{ recipe.description }}</p>
   </div>
   <span class="pull-right">
     <!-- bootstrap will resize the image for you-->
