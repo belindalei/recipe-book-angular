@@ -1,11 +1,10 @@
 import { Recipe } from './recipe.model';
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable()
 export class RecipeService {
-  recipeSelected = new EventEmitter<Recipe>();
 
   //making array private so you can't get it from the outside without getRecipes()
   private recipes: Recipe[] = [
@@ -28,6 +27,10 @@ export class RecipeService {
   getRecipes() {
     //use slice return a new array that's a replica of the recipes array
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number){
+    return this.recipes.slice()[index]; 
   }
 
   addIngToShoppingList(ingredients: Ingredient[]) {
